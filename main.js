@@ -25,7 +25,7 @@ async function getWeather(city,code){
     if(responce.ok){
         var weatherData = await responce.json();
         //alert(weatherData.main.temp +'°C,'+weatherData.weather[0].description+','+weatherData.weather[0].main);
-        Swal.fire('Temp : '+weatherData.main.temp_min+'<='+weatherData.main.temp+'<='+weatherData.main.temp_max +'°C,\nDescription : '+weatherData.weather[0].description+', \n Wind Speed : '+weatherData.wind.speed);
+        Swal.fire('Temp : '+weatherData.main.temp_min+'°C <= '+weatherData.main.temp+'°C <= '+weatherData.main.temp_max +'°C,\nDescription : '+weatherData.weather[0].description+', \n Wind Speed : '+weatherData.wind.speed);
     }
     if(responce.status == 404){
         var responseJson = await responce.json();
