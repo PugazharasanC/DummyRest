@@ -11,6 +11,7 @@ async function myFunc(){
             var newP = document.createElement('p');
             newP.innerHTML = myData[ind].name;
             flagImg.src = myData[ind].flag;
+            flagImg.alt = myData[ind].name + ' flag';
             newDiv.appendChild(flagImg);
             newDiv.appendChild(newP);
             newDiv.setAttribute('onclick','getWeather(\''+(myData[ind].capital).replace(/'/g,'%27')+'\',\''+myData[ind].alpha2Code+'\')')
