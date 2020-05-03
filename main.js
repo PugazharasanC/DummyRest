@@ -24,12 +24,10 @@ async function getWeather(city,code){
     var responce = await fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+','+code+'&appid=00113f369758fba0ae4ee18b5c4f35ea');
     if(responce.ok){
         var weatherData = await responce.json();
-        //alert(weatherData.main.temp +'°C,'+weatherData.weather[0].description+','+weatherData.weather[0].main);
         Swal.fire('Temperature : \n'+weatherData.main.temp_min+'°C <= '+weatherData.main.temp+'°C <= '+weatherData.main.temp_max +'°C,\nDescription : '+weatherData.weather[0].description+', \n Wind Speed : '+weatherData.wind.speed);
     }
     if(responce.status == 404){
         var responseJson = await responce.json();
-        //alert(responseJson.message);
         Swal.fire(responseJson.message);
     }
 }
