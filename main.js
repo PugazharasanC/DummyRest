@@ -27,7 +27,8 @@ async function getWeather(city,code){
         alert(weatherData.main.temp +'°C,'+weatherData.weather[0].description+','+weatherData.weather[0].main);
     }
     if(responce.status == 404){
-        alert(responce.message);
+        var responseJson = await responce.json();
+        alert(responseJson.message);
     }
 }
 window.onload = myFunc;
