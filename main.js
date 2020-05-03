@@ -24,7 +24,8 @@ async function getWeather(city,code){
     var responce = await fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+','+code+'&appid=00113f369758fba0ae4ee18b5c4f35ea');
     if(responce.ok){
         var weatherData = await responce.json();
-        alert(weatherData.main.temp +'°C,'+weatherData.weather[0].description+','+weatherData.weather[0].main);
+        //alert(weatherData.main.temp +'°C,'+weatherData.weather[0].description+','+weatherData.weather[0].main);
+        Swal.fire(weatherData.main.temp +'°C,'+weatherData.weather[0].description+','+weatherData.weather[0].main);
     }
     if(responce.status == 404){
         var responseJson = await responce.json();
