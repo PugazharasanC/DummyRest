@@ -29,7 +29,8 @@ async function getWeather(city,code){
     }
     if(responce.status == 404){
         var responseJson = await responce.json();
-        alert(responseJson.message);
+        //alert(responseJson.message);
+        Swal.fire(responseJson.message);
     }
 }
 window.onload = myFunc;
